@@ -1,0 +1,40 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+}
+.navbar .logo{
+    width: max(10%,80px);
+}
+.navbar .profile{
+    width: 40px;
+}
+.login-conditon:active{
+    font-size: 14px;
+    border: 1px solid rgb(235, 114, 71);
+    padding-inline: 8px;
+    padding-block: 4px;
+    border-radius: 10px;   
+}
+
+.login-conditon{
+    font-size: 14px;
+    border: 1px solid rgb(235, 114, 71);
+    padding-inline: 12px;
+    padding-block: 5px;
+    border-radius: 12px;  
+    background-color: rgb(253, 115, 65); 
+    color: white;
+}
+
+.admin-logo{
+    border: 1px solid rgb(25, 25, 25);
+    display: flex;
+    padding-inline : 10px;
+    padding-block: 3px;
+    border-radius : 5px;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}

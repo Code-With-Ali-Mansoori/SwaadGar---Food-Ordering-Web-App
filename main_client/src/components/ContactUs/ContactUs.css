@@ -1,0 +1,65 @@
+.contact-us {
+  padding: 50px 10%;
+  text-align: center;
+}
+
+.contact-us h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #262626;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-inputs input,
+.contact-inputs textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-inputs input:focus,
+.contact-inputs textarea:focus {
+  border-color: #ff6347; /* Tomato color matches themes */
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #ff6347;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e5533d;
+}
+
+@media (max-width: 768px) {
+  .contact-us {
+    padding: 30px 5%;
+  }
+
+  .contact-us h1 {
+    font-size: 2rem;
+  }
+}
