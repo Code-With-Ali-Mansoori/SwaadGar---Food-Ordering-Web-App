@@ -25,9 +25,14 @@ app.use(cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true); // allow Postman / server-to-server
 
-    if (allowedOrigins.includes(origin)) {
+    // Debugging: Check what is coming in and what is allowed
+    console.log("Request Origin:", origin);
+    console.log("Allowed Origins:", allowedOrigins);
+
+    if (allowedOrigins.map(o => o?.replace(/\/$/, "")).includes(origin?.replace(/\/$/, ""))) {
       return callback(null, true);
     } else {
+      console.error(`CORS Error: Origin ${origin} not allowed`);
       return callback(new Error("Not allowed by CORS"));
     }
   },
