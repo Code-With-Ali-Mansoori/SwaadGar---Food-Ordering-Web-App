@@ -17,19 +17,23 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 
 const allowedOrigins = [
-  process.env.FRONTEND_URL, 
-  "http://localhost:5173", 
+  process.env.FRONTEND_URL,
+  process.env.ADMIN_URL,
+  "http://localhost:5173",
   "http://localhost:5174"
 ];
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
+    if (!origin) return callback(null, true); // allow Postman / server-to-server
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      return callback(new Error("Not allowed by CORS"));
     }
-  }
+  },
+  credentials: true
 }));
 
 // DB connection
